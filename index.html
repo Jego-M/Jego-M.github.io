@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Under Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Lottie player for .lottie files -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+
+  <!-- Lottie Web for JSON animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js" integrity="sha512-uOtp2vx2X/5+tLBEf5UoQyqwAkFZJBM5XwGa7BfXDnWR+wdpRvlSVzaIVcRe3tGNsStu6UMDCeXKEnr4IBT8gA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <style>
     body {
@@ -37,7 +40,7 @@
       margin-bottom: 2rem;
     }
 
-    lottie-player {
+    #lottie-container {
       width: 300px;
       height: 300px;
     }
@@ -50,13 +53,16 @@
     Contact me directly at <a href="mailto:jego.merckx@gmail.com">jego.merckx@gmail.com</a>
   </div>
 
-  <!-- Replace src with your own animation file -->
-  <lottie-player
-    src="construction-anim.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay>
-  </lottie-player>
+  <div id="lottie-container"></div>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'animations/animation.json' // make sure this file exists
+    });
+  </script>
 </body>
 </html>
